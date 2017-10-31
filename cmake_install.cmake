@@ -1,4 +1,4 @@
-# Install script for directory: /home/cloud/IoneseFic/fic
+# Install script for directory: /home/cloud/Desktop/fic
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/cloud/IoneseFic/fic/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/cloud/Desktop/fic/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/cloud/IoneseFic/fic/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/cloud/Desktop/fic/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
