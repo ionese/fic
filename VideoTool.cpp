@@ -220,8 +220,9 @@ void trimite(char s[]){
         }
         sleep(1);
       }
-      
    }
+   sprintf(message,"s");
+   send(sock,message,strlen(message),0);
 
 
 }
@@ -234,9 +235,9 @@ int main(int argc, char* argv[])
 
 	//some boolean variables for different functionality within this
 	//program
-//	bool trackObjects = true;
-//	bool useMorphOps = true;
-/*
+	bool trackObjects = true;
+	bool useMorphOps = true;
+
 	Point p;
 	//Matrix to store each frame of the webcam feed
 	Mat cameraFeed;
@@ -259,15 +260,14 @@ int main(int argc, char* argv[])
 	//start an infinite loop where webcam feed is copied to cameraFeed matrix
 	//all of our operations will be performed within this loop
 
-*/ 
+
 
 
    
      int counter=0;
-      trimite("flffsffffffflrflrfrrrrlllrlrlrlrfffffs");
+      //trimite("flff");
 
-	/*
-    	while (1) {
+		while (1) {
     
     		//store image to matrix
     		capture.read(cameraFeed);
@@ -297,13 +297,13 @@ int main(int argc, char* argv[])
     		//show frames
     		imshow(windowName2, threshold);
     		imshow(windowName, cameraFeed);
-    //		imshow(windowName1, HSV);
+    		imshow(windowName1, HSV);
     		setMouseCallback("Original Image", on_mouse, &p);
     		//delay 30ms so that screen can refresh.
     		
     		//image will not appear without this waitKey() command
     		waitKey(30);
     	}
-  */
+  
 	return 0;
 }

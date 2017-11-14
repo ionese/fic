@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cloud/Desktop/fic/VideoTool.cpp
+/home/cloud/Desktop/Ema/fic/VideoTool.cpp
 sstream
 -
 string
@@ -18,9 +18,9 @@ arpa/inet.h
 iostream
 -
 opencv2/highgui/highgui.hpp
-/home/cloud/Desktop/fic/opencv2/highgui/highgui.hpp
+/home/cloud/Desktop/Ema/fic/opencv2/highgui/highgui.hpp
 opencv2/opencv.hpp
-/home/cloud/Desktop/fic/opencv2/opencv.hpp
+/home/cloud/Desktop/Ema/fic/opencv2/opencv.hpp
 unistd.h
 -
 

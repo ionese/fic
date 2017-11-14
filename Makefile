@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cloud/Desktop/fic
+CMAKE_SOURCE_DIR = /home/cloud/Desktop/Ema/fic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cloud/Desktop/fic
+CMAKE_BINARY_DIR = /home/cloud/Desktop/Ema/fic
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/Desktop/fic/CMakeFiles /home/cloud/Desktop/fic/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/Desktop/Ema/fic/CMakeFiles /home/cloud/Desktop/Ema/fic/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/Desktop/fic/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cloud/Desktop/Ema/fic/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
