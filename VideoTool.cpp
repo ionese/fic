@@ -13,7 +13,7 @@ using namespace cv;
 //initial min and max HSV filter values.
 //these will be changed using trackbars
 
-int xmeu,ymeu,xadv,yadv,xmeu1,ymeu1;
+
 
 
 
