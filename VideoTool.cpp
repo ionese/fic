@@ -13,6 +13,16 @@ using namespace cv;
 //initial min and max HSV filter values.
 //these will be changed using trackbars
 
+int xmeu,ymeu,xadv,yadv,xmeu1,ymeu1;
+
+
+
+int H_MIN2 = 0;
+int H_MAX2 = 256;
+int S_MIN2 = 148;
+int S_MAX2 = 256;
+int V_MIN2 = 0;
+int V_MAX2 = 256; 
 
 int H_MIN = 0;
 int H_MAX = 256;
@@ -211,7 +221,7 @@ void trimite(char s[]){
     for(int i=0;i<strlen(s);i++)
     {
       if(s[i]=='f'||s[i]=='s'||s[i]=='l'||s[i]=='r'||s[i]=='b')
-      {cout<<"Comanda "<<s[i]<<endl;
+      {cout<<"aici "<<s[i]<<endl;
         
         sprintf(message,"%c",s[i]);
         if( send(sock , message , strlen(message) , 0) < 0)
@@ -223,10 +233,8 @@ void trimite(char s[]){
    }
    sprintf(message,"s");
    send(sock,message,strlen(message),0);
-
-
+   
 }
-
 
 
 
@@ -245,6 +253,7 @@ int main(int argc, char* argv[])
 	Mat HSV;
 	//matrix storage for binary threshold image
 	Mat threshold;
+  Mat threshold1;
 	//x and y values for the location of the object
 	int x = 0, y = 0;
 	//create slider bars for HSV filtering
@@ -260,12 +269,9 @@ int main(int argc, char* argv[])
 	//start an infinite loop where webcam feed is copied to cameraFeed matrix
 	//all of our operations will be performed within this loop
 
-
-
-
-   
      int counter=0;
-      //trimite("flff");
+     int counter1=0;
+      //trimite("f");
 
 		while (1) {
     
@@ -277,12 +283,13 @@ int main(int argc, char* argv[])
     		//threshold matrix
     		if(counter==0){
     			inRange(HSV, Scalar(H_MIN, S_MIN, V_MIN), Scalar(H_MAX, S_MAX, V_MAX), threshold);
-    			counter=1;
+          inRange(HSV, Scalar(H_MIN2,S_MIN2,V_MIN2), Scalar(H_MAX2,S_MAX2,V_MAX),threshold1);
+    			counter=1;//detecteaza fata si centru
     		}
     		else {
     
     			inRange(HSV,Scalar(H_MIN1,S_MIN1,V_MIN1),Scalar(H_MAX1,S_MAX1,V_MAX1),threshold);
-    			counter=0;	
+    			counter=0;	//detecteaza adversar
     		}
     		//perform morphological operations on thresholded image to eliminate noise
     		//and emphasize the filtered object(s)
@@ -291,9 +298,11 @@ int main(int argc, char* argv[])
     		//pass in thresholded frame to our object tracking function
     		//this function will return the x and y coordinates of the
     		//filtered object
-    		if (trackObjects)
-    			trackFilteredObject(x, y, threshold, cameraFeed);
-    
+    		if (trackObjects){
+    			trackFilteredObject(x, y, threshold, cameraFeed);//aici detectez centrul robotului
+          
+       }
+       
     		//show frames
     		imshow(windowName2, threshold);
     		imshow(windowName, cameraFeed);
@@ -304,6 +313,6 @@ int main(int argc, char* argv[])
     		//image will not appear without this waitKey() command
     		waitKey(30);
     	}
-  
+
 	return 0;
 }
