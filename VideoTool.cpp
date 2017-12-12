@@ -270,7 +270,7 @@ int main(int argc, char* argv[])
 	//all of our operations will be performed within this loop
 
      int counter=0;
-     int counter1=0;
+     //int counter1=0;
       //trimite("f");
 
 		while (1) {
