@@ -283,7 +283,7 @@ int main(int argc, char* argv[])
     		//threshold matrix
     		if(counter==0){
     			inRange(HSV, Scalar(H_MIN, S_MIN, V_MIN), Scalar(H_MAX, S_MAX, V_MAX), threshold);
-          inRange(HSV, Scalar(H_MIN2,S_MIN2,V_MIN2), Scalar(H_MAX2,S_MAX2,V_MAX),threshold1);
+          		inRange(HSV, Scalar(H_MIN2,S_MIN2,V_MIN2), Scalar(H_MAX2,S_MAX2,V_MAX),threshold1);
     			counter=1;//detecteaza fata si centru
     		}
     		else {
