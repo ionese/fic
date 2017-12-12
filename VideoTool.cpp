@@ -211,7 +211,7 @@ void trimite(char s[]){
     for(int i=0;i<strlen(s);i++)
     {
       if(s[i]=='f'||s[i]=='s'||s[i]=='l'||s[i]=='r'||s[i]=='b')
-      {cout<<"aici "<<s[i]<<endl;
+      {cout<<"Comanda "<<s[i]<<endl;
         
         sprintf(message,"%c",s[i]);
         if( send(sock , message , strlen(message) , 0) < 0)
